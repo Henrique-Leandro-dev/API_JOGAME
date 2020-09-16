@@ -23,20 +23,34 @@ namespace API_Senai.Controllers
             _jogadorRepository = new JogadorRepository();
         }
 
+        /// <summary>
+        /// mostra todos os jogadores cadastrados
+        /// </summary>
+        /// <returns>Lista com jogadores</returns>
         [HttpGet]
         public List<Jogador> Get()
         {
             return _jogadorRepository.Listar();
         }
 
-        // GET api/<RacaController>/5
+        /// <summary>
+        /// Busca por determinado Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna o jogador do id escolhido </returns>
+        // GET api/< JogadorRepository>/5
         [HttpGet("{id}")]
         public Jogador Get(Guid id)
         {
             return _jogadorRepository.BuscarPorId(id);
         }
 
-        // POST api/<RacaController>
+      
+        // POST api/<JogadorRepository>
+        /// <summary>
+        /// cadastra um jogador 
+        /// </summary>
+        /// <param name="jogador"></param>
         [HttpPost]
         public void Post([FromForm] Jogador jogador)
         {
@@ -50,7 +64,12 @@ namespace API_Senai.Controllers
             _jogadorRepository.Adicionar(jogador);
         }
 
-        // PUT api/<RacaController>/5
+        // PUT api/<JogadorRepository>/5
+        /// <summary>
+        /// Modifica um determinado jogador 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jogador"></param>
         [HttpPut("{id}")]
         public void Put(Guid id, Jogador jogador)
         {
@@ -59,6 +78,10 @@ namespace API_Senai.Controllers
         }
 
         // DELETE api/<RacaController>/5
+        /// <summary>
+        /// Deleta um determinado jogador 
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {

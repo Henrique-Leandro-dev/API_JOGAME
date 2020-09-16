@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API_Senai</name>
+    </assembly>
+    <members>
+        <member name="M:API_Senai.Controllers.JogadoresController.Get">
+            <summary>
+            mostra todos os jogadores cadastrados
+            </summary>
+            <returns>Lista com jogadores</returns>
+        </member>
+        <member name="M:API_Senai.Controllers.JogadoresController.Get(System.Guid)">
+            <summary>
+            Busca por determinado Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o jogador do id escolhido </returns>
+        </member>
+        <member name="M:API_Senai.Controllers.JogadoresController.Post(API_Senai.Domains.Jogador)">
+            <summary>
+            cadastra um jogador 
+            </summary>
+            <param name="jogador"></param>
+        </member>
+        <member name="M:API_Senai.Controllers.JogadoresController.Put(System.Guid,API_Senai.Domains.Jogador)">
+            <summary>
+            Modifica um determinado jogador 
+            </summary>
+            <param name="id"></param>
+            <param name="jogador"></param>
+        </member>
+        <member name="M:API_Senai.Controllers.JogadoresController.Delete(System.Guid)">
+            <summary>
+            Deleta um determinado jogador 
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>
