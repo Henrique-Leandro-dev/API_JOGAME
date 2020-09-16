@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace API_Senai.Domains
@@ -14,7 +17,14 @@ namespace API_Senai.Domains
         public string Senha { get; set; }
         public DateTime DataNascimento { get; set; }
 
-        
+
+        [NotMapped]
+        [JsonIgnore]
+        public IFormFile  Imagem { get; set; }
+
+        public string UrlImagem { get; set; }
+
+
     }
 
     //Jogador - Nome, Email, Senha, Data Nasc

@@ -4,14 +4,16 @@ using API_Senai.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API_Senai.Migrations
 {
     [DbContext(typeof(JogadorContext))]
-    partial class JogadorContextModelSnapshot : ModelSnapshot
+    [Migration("20200916184632_AlterTableProduto")]
+    partial class AlterTableProduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

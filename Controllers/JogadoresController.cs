@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using API_Senai.Domains;
 using API_Senai.Interfaces;
 using API_Senai.Repositories;
+using API_Senai.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,9 +38,16 @@ namespace API_Senai.Controllers
 
         // POST api/<RacaController>
         [HttpPost]
-        public void Post( Jogador jogador)
+        public void Post([FromForm] Jogador jogador)
         {
-             _jogadorRepository.Adicionar(jogador);
+            if (jogador.Imagem != null)
+            {
+                var urlImagem = Upload.Local(jogador.Imagem);
+
+                jogador.UrlImagem = urlImagem;
+            }
+            
+            _jogadorRepository.Adicionar(jogador);
         }
 
         // PUT api/<RacaController>/5
