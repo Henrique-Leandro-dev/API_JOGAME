@@ -26,21 +26,21 @@ namespace API_Senai.Controllers
             return _jogoRepository.Listar();
         }
 
-        // GET api/<RacaController>/5
+        // GET api/<JogoController>/5
         [HttpGet("{id}")]
         public Jogo Get(Guid id)
         {
             return _jogoRepository.BuscarPorId(id);
         }
 
-        // POST api/<RacaController>
+        // POST api/<JogoController>
         [HttpPost]
         public void Post(Jogo jogo)
         {
             _jogoRepository.Adicionar(jogo);
         }
 
-        // PUT api/<RacaController>/5
+        // PUT api/<JogoController>/5
         [HttpPut("{id}")]
         public void Put(Guid id, Jogo jogo)
         {
@@ -48,7 +48,7 @@ namespace API_Senai.Controllers
             _jogoRepository.Editar(jogo);
         }
 
-        // DELETE api/<RacaController>/5
+        // DELETE api/<JogoController>/5
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
